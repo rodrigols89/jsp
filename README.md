@@ -1,4 +1,4 @@
-# Salary Prediction
+# Job Salary Prediction
 
 Esse projeto foi desenvolvido com objetivo de resolver um desafio para vaga de **Cientista de Dados Jr** requerido pelo a empresa **[GRIA](https://www.gria.io/)**.
 
@@ -12,6 +12,7 @@ Resumidamente, o desafio foi:
  - [Problema proposto](#problem)
  - [Visão geral do conjunto de dados](#data-overview)
  - [Análise preliminar do conjunto de dados](#preliminary-analysis)
+ - [Pré-Processamento & modelagem](#preprocessing-ml)
  - [Tech Stack](#tech-stack)
 
 ---
