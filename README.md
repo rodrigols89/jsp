@@ -138,11 +138,29 @@ Outra observação aqui é que essa análise foi feita nos **dados de treino**.
 
 ---
 
+<div id="preprocessing-ml"></div>
+
+## Pré-Processamento & modelagem
+
+Finalmente, nessa étapa do projeto foi feito um Pré-Processamento nas colunas (features) e em seguida feita a modelagem em vários modelos de regressão com o objetivo de encontrar o modelo com a melhor métrica **MAE (Mean absolute error)**.
+
+**Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
+<a target="_blank" href="notebooks/preprocessing-ml.ipynb">
+  <img src="images/jupyter-icon.ico" />
+  Pré-Processamento & Modelagem (ML)
+</a>
+
+**NOTE:**  
+Essa étapa não foi finalizada por falta de tempo (pessoal, não tempo disponível pelo a GRIA) e planejamento.
+
+---
+
 <div id="tech-stack"></div>
 
 ## Tech Stack
 
  - **Python com:**
+   - Scikit-Learn
    - Matplotlib
    - Seaborn
    - Pandas
