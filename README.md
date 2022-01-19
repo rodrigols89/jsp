@@ -152,7 +152,7 @@ Outra observação aqui é que essa análise foi feita nos **dados de treino**.
 > Nessa étapa do projeto foi feito um Pré-Processamento nas colunas (features).
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
-<a target="_blank" href="notebooks/preprocessing-ml.ipynb">
+<a target="_blank" href="notebooks/preprocessing.ipynb">
   <img src="images/jupyter-icon.ico" />
   Pré-Processamento
 </a>
