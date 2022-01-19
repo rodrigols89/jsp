@@ -12,7 +12,7 @@ Resumidamente, o desafio foi:
  - [Problema proposto](#problem)
  - [Visão geral do conjunto de dados](#data-overview)
  - [Análise preliminar do conjunto de dados](#preliminary-analysis)
- - [Pré-Processamento & modelagem](#preprocessing-ml)
+ - [Pré-Processamento](#preprocessing)
  - [Tech Stack](#tech-stack)
 
 ---
@@ -90,12 +90,13 @@ Esses campos são os seguintes:
    - Isso, porque essa coluna é o resultado de um Pré-Processamento da coluna LocationRaw feito pelo [Adzuna](https://www.adzuna.co.uk/).
  - **ContractType**
    - Essa coluna representa os tipos de contratos por amostra de vaga de emprego, que são **full_time** ou **part_time**.
+   - Na verdade, essa coluna nos diz se o funcionário trabalha integral (por exemplo, 40h semanais) ou meio expediente (por exemplo, 20h semanais)
  - **ContractTime**
-   - Como vai ser o contrato que pode ser **permanente** ou **contrato**.
+   - Tipo de contrato, que pode ser **permanente (por exemplo, CLT)** ou **contrato (por exemplo, PJ)**.
  - **Company**
    - O nome do empregador conforme fornecido pelo anunciante do emprego.
  - **Category**
-   - Em qual das 30 categorias de empregos padrão este anúncio se encaixa, inferida de uma forma muito confusa com base na origem de onde o anúncio veio.
+   - Em qual das 30 categorias de empregos padrão este anúncio se encaixa.
  - **SalaryRaw**
    - Imagine que essa coluna representa o salário do anúncio (amostra). Porém:
      - Sem formatação;
@@ -110,7 +111,12 @@ Esses campos são os seguintes:
    - O nome do site ou anunciante de quem recebemos o anúncio de emprego. 
 
 **NOTE:**  
-Todos os dados são reais, de anúncios de emprego coletados pelo a [Adzuna](https://www.adzuna.co.uk/), portanto, estão claramente sujeitos a muitos ruídos do mundo real, incluindo, mas não se limitando a: anúncios que não são do Reino Unido, salários que são declarados incorretamente, campos que estão incorretamente normalizados e anúncios duplicados.
+Todos os dados são reais, de anúncios de emprego coletados pelo a [Adzuna](https://www.adzuna.co.uk/), portanto, estão claramente sujeitos a muitos ruídos do mundo real, incluindo, mas não se limitando há:
+
+ - Anúncios que não são do Reino Unido;
+ - Salários que são declarados incorretamente;
+ - Campos que estão incorretamente normalizados;
+ - E anúncios duplicados.
 
 ---
 
@@ -139,20 +145,17 @@ Outra observação aqui é que essa análise foi feita nos **dados de treino**.
 
 ---
 
-<div id="preprocessing-ml"></div>
+<div id="preprocessing"></div>
 
-## Pré-Processamento & modelagem
+## Pré-Processamento
 
-Finalmente, nessa étapa do projeto foi feito um Pré-Processamento nas colunas (features) e em seguida feita a modelagem em vários modelos de regressão com o objetivo de encontrar o modelo com a melhor métrica **MAE (Mean absolute error)**.
+> Nessa étapa do projeto foi feito um Pré-Processamento nas colunas (features).
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
 <a target="_blank" href="notebooks/preprocessing-ml.ipynb">
   <img src="images/jupyter-icon.ico" />
-  Pré-Processamento & Modelagem (ML)
+  Pré-Processamento
 </a>
-
-**NOTE:**  
-Essa étapa não foi finalizada por falta de tempo (pessoal, não tempo disponível pelo a GRIA) e planejamento.
 
 ---
 
@@ -161,7 +164,6 @@ Essa étapa não foi finalizada por falta de tempo (pessoal, não tempo disponí
 ## Tech Stack
 
  - **Python com:**
-   - Scikit-Learn
    - Matplotlib
    - Seaborn
    - Pandas
