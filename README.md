@@ -4,7 +4,7 @@ Esse projeto foi desenvolvido com objetivo de resolver um desafio para vaga de *
 
 Resumidamente, o desafio foi:
 
-> Desenvolva um modelo de *Previsão* de salário de anúncios de empregos.
+> Desenvolver um modelo de *Previsão* de salário de anúncios de empregos.
 
 ## Visão geral do Projeto
 
@@ -13,6 +13,7 @@ Resumidamente, o desafio foi:
  - [Visão geral do conjunto de dados](#data-overview)
  - [Análise preliminar do conjunto de dados](#preliminary-analysis)
  - [Pré-Processamento](#preprocessing)
+ - [Treinamento & Validação](#training)
  - [Tech Stack](#tech-stack)
 
 ---
@@ -140,21 +141,37 @@ Vale salientar que nessa étapa não seria feita (como não foi) nenhuma altera�
   Análise preliminar do conjunto de dados
 </a>
 
-**NOTE:**  
-Outra observação aqui é que essa análise foi feita nos **dados de treino**.
-
 ---
 
 <div id="preprocessing"></div>
 
 ## Pré-Processamento
 
-> Nessa étapa do projeto foi feito um Pré-Processamento nas colunas (features).
+> Nessa étapa do projeto foi feito um **Pré-Processamento** nas colunas (features).
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
 <a target="_blank" href="notebooks/preprocessing.ipynb">
   <img src="images/jupyter-icon.ico" />
   Pré-Processamento
+</a>
+
+---
+
+<div id="training"></div>
+
+## Treinamento & Validação
+
+> Nessa etapa basicamente vai ser feito um treinamento na (nas) coluna(s) que já passaram por um *Pré-Processamento*.
+
+**NOTE:**  
+Aqui também vai ser verificado quão bem está aprendendo nosso modelo utilizando a **Métrica Validação** especificada pelo a **[GRIA](https://www.gria.io/)** e Competição do Kaggle:
+
+> [Erro Médio Absoluto](https://en.wikipedia.org/wiki/Mean_absolute_error)
+
+**Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
+<a target="_blank" href="notebooks/training-models.ipynb">
+  <img src="images/jupyter-icon.ico" />
+  Treinamento
 </a>
 
 ---
