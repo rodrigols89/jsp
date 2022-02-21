@@ -1,3 +1,5 @@
+> Esse projeto está em manutenção.
+
 # Job Salary Prediction
 
 Esse projeto foi desenvolvido com objetivo de resolver um desafio para vaga de **Cientista de Dados Jr** requerido pelo a empresa **[GRIA](https://www.gria.io/)**.
