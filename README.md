@@ -16,6 +16,7 @@ Resumidamente, o desafio foi:
  - [Análise preliminar do conjunto de dados](#preliminary-analysis)
  - [Pré-Processamento](#preprocessing)
  - [Treinamento & Validação](#training)
+ - [Configurações do Projeto](#settings)
  - [Tech Stack](#tech-stack)
 
 ---
@@ -163,10 +164,10 @@ Vale salientar que nessa étapa não seria feita (como não foi) nenhuma altera�
 
 ## Treinamento & Validação
 
-> Nessa etapa basicamente vai ser feito um treinamento na (nas) coluna(s) que já passaram por um *Pré-Processamento*.
+> Na etapa de **Treinamento & Validação** basicamente foi feito um treinamento na (nas) coluna(s) que já passaram por um *Pré-Processamento*.
 
 **NOTE:**  
-Aqui também vai ser verificado quão bem está aprendendo nosso modelo utilizando a **Métrica Validação** especificada pelo a **[GRIA](https://www.gria.io/)** e Competição do Kaggle:
+Aqui também foi verificado quão bem está aprendendo nosso modelo utilizando a **Métrica de Validação** especificada pelo a **[GRIA](https://www.gria.io/)** e Competição do Kaggle:
 
 > [Erro Médio Absoluto](https://en.wikipedia.org/wiki/Mean_absolute_error)
 
@@ -178,15 +179,41 @@ Aqui também vai ser verificado quão bem está aprendendo nosso modelo utilizan
 
 ---
 
+<div id="settings"></div>
+
+## Configurações do Projeto
+
+Para utilizar os código desse projeto, primeiro, instale as dependências (bibliotecas) em [requirements.txt](requirements.txt):
+
+**Configurando o virtualenv (Ambiente virtual):**  
+```python
+where python3.7 # Windows users.
+whereis python3.7 # Linux users.
+
+virtual --python="python-source" .
+source Script/Active # Windows users.
+source bin/activate # Linux users.
+```
+
+**Instalando as bibliotecas necessárias:**  
+```python
+pip install --upgrade -r requirements.tx
+```
+
+---
+
 <div id="tech-stack"></div>
 
 ## Tech Stack
 
  - **Python com:**
+   - Scikit-Learn
    - Matplotlib
    - Seaborn
    - Pandas
+   - SciPy
    - py7zr
+   - NLTK
 
 ---
 
