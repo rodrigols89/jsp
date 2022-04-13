@@ -236,3 +236,6 @@ $RECYCLE.BIN/
 
 # MinIO cache
 datalake/.minio.sys/*
+
+# NLTK useful modules
+omw-1.4

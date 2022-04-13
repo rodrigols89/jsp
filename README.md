@@ -1,5 +1,3 @@
-> Esse projeto está em manutenção.
-
 # Job Salary Prediction
 
 Esse projeto foi desenvolvido com objetivo de resolver um desafio para vaga de **Cientista de Dados Jr** requerido pelo a empresa **[GRIA](https://www.gria.io/)**.
@@ -76,9 +74,9 @@ Id,       SalaryNormalized
 
 ## Visão geral do conjunto de dados
 
-O conjunto de dados principal consiste em um grande número de linhas que representam anúncios de emprego individuais e uma série de campos sobre cada anúncio de emprego.
+O conjunto de dados principal consiste em um grande número de linhas (amostras) que representam anúncios de emprego individuais e uma série de campos sobre cada anúncio de emprego.
 
-Esses campos são os seguintes:
+Os campos são os seguintes:
 
  - **Id**
    - Um identificador exclusivo para cada anúncio de emprego (amostra).
@@ -140,7 +138,7 @@ Vale salientar que nessa étapa não seria feita (como não foi) nenhuma altera�
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
 <a target="_blank" href="notebooks/preliminary-analysis.ipynb">
-  <img src="images/jupyter-icon.ico" />
+  <img src="resources/images/jupyter-icon.ico" />
   Análise preliminar do conjunto de dados
 </a>
 
@@ -154,7 +152,7 @@ Vale salientar que nessa étapa não seria feita (como não foi) nenhuma altera�
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
 <a target="_blank" href="notebooks/preprocessing.ipynb">
-  <img src="images/jupyter-icon.ico" />
+  <img src="resources/images/jupyter-icon.ico" />
   Pré-Processamento
 </a>
 
@@ -173,7 +171,7 @@ Aqui também foi verificado quão bem está aprendendo nosso modelo utilizando a
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
 <a target="_blank" href="notebooks/training-models.ipynb">
-  <img src="images/jupyter-icon.ico" />
+  <img src="resources/images/jupyter-icon.ico" />
   Treinamento
 </a>
 
