@@ -63,7 +63,7 @@ class Preprocessing:
     if platform.system() == 'Windows':
       try:
         # For Windows users.
-        df_testing = pd.read_csv("C:\Windows\Temp\Test_rev1.7z")
+        df_testing = pd.read_csv("C:\Windows\Temp\Test_rev1.csv")
       except FileNotFoundError:
         print("File or path not!")
       else:

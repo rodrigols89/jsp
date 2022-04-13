@@ -170,9 +170,9 @@ Aqui também foi verificado quão bem está aprendendo nosso modelo utilizando a
 > [Erro Médio Absoluto](https://en.wikipedia.org/wiki/Mean_absolute_error)
 
 **Você vai poder *ver* e *entender* como foi feito esse processo clicando no *Jupyter Notebook* abaixo:**  
-<a target="_blank" href="notebooks/training-models.ipynb">
+<a target="_blank" href="notebooks/training-validation.ipynb">
   <img src="resources/images/jupyter-icon.ico" />
-  Treinamento
+  Treinamento & Validação
 </a>
 
 ---
