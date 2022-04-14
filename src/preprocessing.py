@@ -38,7 +38,7 @@ class Preprocessing:
       print("This method only works with Windows and Linux Operating Systems.")
 
 
-  def get_traing_data(self):
+  def get_training_data(self):
     if platform.system() == 'Windows':
       try:
         # For Windows users.
