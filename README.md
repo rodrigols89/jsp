@@ -1,3 +1,6 @@
+**NOTE:**  
+Esse projeto está em melhora contínua. Vocês podem verificar versões (abordagens) descontinuadas nas branchs **[deprecated-v1](https://github.com/drigols/job-salary-prediction/tree/deprecated-v1)** e **[deprecated-v2](https://github.com/drigols/job-salary-prediction/tree/deprecated-v2)**.
+
 # Job Salary Prediction
 
 Esse projeto foi desenvolvido com objetivo de resolver um desafio para vaga de **Cientista de Dados Jr** requerido pelo a empresa **[GRIA](https://www.gria.io/)**.
