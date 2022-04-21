@@ -86,7 +86,7 @@ class Preprocessing:
 
   def missing_by_percent(self, df):
     try:
-      percentMissing = (df.isnull().sum() / len(df_Title.index)) * 100
+      percentMissing = (df.isnull().sum() / len(df.index)) * 100
     except ZeroDivisionError:
       print("Sorry! You are dividing by zero.")
     else:
