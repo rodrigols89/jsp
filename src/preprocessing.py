@@ -146,3 +146,13 @@ class Preprocessing:
   def save_feature(self, feature_name, feature):
     scipy.sparse.save_npz(f"../resources/processed_features/{feature_name}", feature)
     print("Feature saved!")
+
+
+  def save_to_csv(self, df, df_name):
+    df.to_csv(
+      path_or_buf=f"../resources/load/{df_name}.csv",
+      header=True,
+      encoding='utf-8',
+      index=False,
+    )
+    print("DataFrame saved!")
