@@ -22,83 +22,83 @@ class Training:
     return x_train, x_valid, y_train, y_valid
 
 
-  def predict_linear_regression(self, x_train, y_train, x_valid_test, model_name=None):
+  def linear_regression(self, x_train, y_train, x_valid_test, predict=False, model_name=None):
     model = LinearRegression() # Instance.
     model.fit(x_train, y_train) # Training.
-    salaries_predicted = pd.DataFrame(model.predict(x_valid), columns=["SalaryNormalized"])
     # Save model process.
-    if model_name is None:
-      return salaries_predicted
-    else:
+    if model_name is not None:
       joblib.dump(
         value=model,
         filename=f"../resources/load/{model_name}.pkl"
       )
       print("Model saved!")
+    # Predict process.
+    if predict is True:
+      salaries_predicted = pd.DataFrame(model.predict(x_valid_test), columns=["SalaryNormalized"])
       return salaries_predicted
 
 
-  def predict_ridge_regression(self, x_train, y_train, x_valid_test, model_name=None):
+  def ridge_regression(self, x_train, y_train, x_valid_test, predict=False, model_name=None):
     model = Ridge(alpha=1.0) # Alpha = Learning Rate.
     model.fit(x_train, y_train) # Training.
-    salaries_predicted = pd.DataFrame(model.predict(x_valid), columns=["SalaryNormalized"])
     # Save model process.
-    if model_name is None:
-      return salaries_predicted
-    else:
+    if model_name is not None:
       joblib.dump(
         value=model,
         filename=f"../resources/load/{model_name}.pkl"
       )
       print("Model saved!")
+    # Predict process.
+    if predict is True:
+      salaries_predicted = pd.DataFrame(model.predict(x_valid_test), columns=["SalaryNormalized"])
       return salaries_predicted
 
 
-  def predict_lasso_regression(self, x_train, y_train, x_valid_test, model_name=None):
+  def lasso_regression(self, x_train, y_train, x_valid_test, predict=False, model_name=None):
     model = Lasso(alpha=10, max_iter=1000, tol=0.1)
     model.fit(x_train, y_train) # Training.
-    salaries_predicted = pd.DataFrame(model.predict(x_valid), columns=["SalaryNormalized"])
     # Save model process.
-    if model_name is None:
-      return salaries_predicted
-    else:
+    if model_name is not None:
       joblib.dump(
         value=model,
         filename=f"../resources/load/{model_name}.pkl"
       )
       print("Model saved!")
+    # Predict process.
+    if predict is True:
+      salaries_predicted = pd.DataFrame(model.predict(x_valid_test), columns=["SalaryNormalized"])
       return salaries_predicted
 
 
-  def predict_elasticnet_regression(self, x_train, y_train, x_valid_test, model_name=None):
+  def elasticnet_regression(self, x_train, y_train, x_valid_test, predict=False, model_name=None):
     model = ElasticNet(alpha=1, l1_ratio=0.5, tol=0.3)
     model.fit(x_train, y_train) # Training.
-    salaries_predicted = pd.DataFrame(model.predict(x_valid), columns=["SalaryNormalized"])
     # Save model process.
-    if model_name is None:
-      return salaries_predicted
-    else:
+    if model_name is not None:
       joblib.dump(
         value=model,
         filename=f"../resources/load/{model_name}.pkl"
       )
       print("Model saved!")
+    # Predict process.
+    if predict is True:
+      salaries_predicted = pd.DataFrame(model.predict(x_valid_test), columns=["SalaryNormalized"])
       return salaries_predicted
 
 
-  def predict_random_forest_regressor(self, x_train, y_train, x_valid_test, model_name=None):
+  def random_forest_regressor(self, x_train, y_train, x_valid_test, predict=False, model_name=None):
     model = RandomForestRegressor(n_jobs=-1) # Instance.
     model.fit(x_train, np.ravel(y_train)) # Training.
-    salaries_predicted = pd.DataFrame(model.predict(x_valid), columns=["SalaryNormalized"])
     # Save model process.
-    if model_name is None:
-      return salaries_predicted
-    else:
+    if model_name is not None:
       joblib.dump(
         value=model,
         filename=f"../resources/load/{model_name}.pkl"
       )
       print("Model saved!")
+    # Predict process.
+    if predict is True:
+      salaries_predicted = pd.DataFrame(model.predict(x_valid_test), columns=["SalaryNormalized"])
       return salaries_predicted
 
 
@@ -135,4 +135,4 @@ class Training:
     bestModel = min(dic_models, key=dic_models.get) # Select the best model.
 
     print("MAE for Random Forest Regressor: {0}\nMAE for Linear Regression: {1}\nMAE for Ridge (L2) Regression: {2}\nMAE for Lasso (L1) Regression: {3}\nMAE for Elastic Net (L2 + L1) Regression: {4}".format(randomForestRegressor_result.mean(), linearRegression_result.mean(), elasticNet_result.mean(), ridge_result.mean(), lasso_result.mean()))
-    print("The best model is: {0} with MAE value: {1}".format(bestModel, dic_models[bestModel]))
+    print("The best model is {0} with MAE value: {1}".format(bestModel, dic_models[bestModel]))
