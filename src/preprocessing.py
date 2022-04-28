@@ -1,12 +1,15 @@
 import pandas as pd
 import scipy.sparse
 import platform
+import datetime
 import py7zr
 import nltk
 import os
 
-from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.feature_extraction.text import CountVectorizer
+from collections import Counter
+from datetime import datetime
+
+from sklearn.feature_extraction.text import TfidfVectorizer
 
 from nltk.stem.porter import PorterStemmer
 from nltk.stem import WordNetLemmatizer
@@ -16,6 +19,7 @@ from nltk.corpus import wordnet
 class Preprocessing:
 
   def extract_7z_data(self, path):
+    start_time = datetime.now()
     if platform.system() == 'Windows':
       try:
         # For Windows users.
@@ -36,9 +40,12 @@ class Preprocessing:
         print("File extracted!")
     else:
       print("This method only works with Windows and Linux Operating Systems.")
+    end_time = datetime.now()
+    print('Method runtime: {}'.format(end_time - start_time))
 
 
   def get_training_data(self):
+    start_time = datetime.now()
     if platform.system() == 'Windows':
       try:
         # For Windows users.
@@ -47,6 +54,8 @@ class Preprocessing:
         print("File or path not!")
       else:
         print("Training data ready!")
+        end_time = datetime.now()
+        print('Method runtime: {}'.format(end_time - start_time))
         return df_training
     elif platform.system() == 'Linux':
       try:
@@ -56,10 +65,13 @@ class Preprocessing:
         print("File or path not!")
       else:
         print("Training data ready!")
+        end_time = datetime.now()
+        print('Method runtime: {}'.format(end_time - start_time))
         return df_training
 
 
-  def get_testing_data(self): 
+  def get_testing_data(self):
+    start_time = datetime.now()
     if platform.system() == 'Windows':
       try:
         # For Windows users.
@@ -68,6 +80,8 @@ class Preprocessing:
         print("File or path not!")
       else:
         print("Testing data ready!")
+        end_time = datetime.now()
+        print('Method runtime: {}'.format(end_time - start_time))
         return df_testing
     elif platform.system() == 'Linux':
       try:
@@ -77,7 +91,10 @@ class Preprocessing:
         print("File or path not!")
       else:
         print("Testing data ready!")
+        end_time = datetime.now()
+        print('Method runtime: {}'.format(end_time - start_time))
         return df_testing
+
 
   def missing_by_numbers(self, df):
     missing = df.isnull().sum()
@@ -102,16 +119,16 @@ class Preprocessing:
     df = df.str.replace('[^\w\s]',' ', regex=True)
     return df
 
-  
+
   def remove_numbers(self, df):
     df = df.str.replace('[0-9]+', '', regex=True)
     return df
 
 
   def apply_stemming(self, df):
-    stemmer = PorterStemmer() # Instance.    
-    return " ".join([stemmer.stem(word) for word in str(df).split()])
-    print("Stemming concluded!")
+    start_time = datetime.now()
+    stemmer = PorterStemmer() # Instance.
+    return " ".join([stemmer.stem(word) for word in str(df).split() ])
 
 
   def apply_lemmatization(self, df):
@@ -130,16 +147,34 @@ class Preprocessing:
       wordnet_map = {"N":wordnet.NOUN, "V":wordnet.VERB, "J":wordnet.ADJ, "R":wordnet.ADV} # Apply dict mapping.
       pos_tagged_text = nltk.pos_tag(df.split())
       return " ".join([lemmatizer.lemmatize(word, wordnet_map.get(pos[0], wordnet.NOUN)) for word, pos in pos_tagged_text])
-      print("Lemmatization concluded!")
 
 
-  def apply_countVectorizer(self, df):
-    vectorizer = CountVectorizer(
-      stop_words="english", # Add stopwords.
-      max_df=0.60, # Ignores terms that appear in MORE than 60% of documents.
-      min_df=0.05, # Ignores terms that appear in LESS than 5% of documents
+  def check_most_common_words(self, df):
+    start_time = datetime.now()
+    cnt_df = Counter() # Instance
+    for text in df.values:
+      for word in text.split():
+        cnt_df[word] += 1
+    df_most_common = pd.DataFrame(
+      cnt_df.most_common(),
+      columns = ["Word", "Frequency"]
+    )
+    end_time = datetime.now()
+    print('Method runtime: {}'.format(end_time - start_time))
+    return df_most_common.sort_values(by=["Frequency"], ascending=False)
+
+
+  def apply_tfidf_vectorizer(self, df, max_df=1, min_df=1):
+    start_time = datetime.now()
+    vectorizer = TfidfVectorizer(
+      stop_words="english",
+      max_df = max_df,
+      min_df = min_df,
     )
     df_vectorized = vectorizer.fit_transform(df)
+    end_time = datetime.now()
+    print("DataFrame Vectorized!")
+    print('Method runtime: {}'.format(end_time - start_time))
     return df_vectorized
 
 
