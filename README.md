@@ -1,5 +1,4 @@
-**NOTE:**  
-Esse projeto está em melhora contínua. Vocês podem verificar versões (abordagens) descontinuadas nas branchs **[deprecated-v1](https://github.com/drigols/job-salary-prediction/tree/deprecated-v1)** e **[deprecated-v2](https://github.com/drigols/job-salary-prediction/tree/deprecated-v2)**.
+[![License MIT](resources/images/license-MIT-blue.svg)](LICENSE.md)
 
 # Job Salary Prediction
 
