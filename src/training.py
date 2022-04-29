@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+# Authors: Rodrigo Leite da Silva - drigols <drigols.creative@gmail.com>
+# License: MIT
+"""
+The :mod:`training.py` Train and validate models.
+"""
+
 import pandas as pd
 import scipy.sparse
 import platform
