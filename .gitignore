@@ -251,3 +251,4 @@ $RECYCLE.BIN/
 
 # Ignore all .csv files
 *.csv
+*.7z
