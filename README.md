@@ -103,7 +103,7 @@ These fields are as follows:
 > Here, we go understanding more about the data, applying an **Exploratory Data Analysis (EDA)**.
 
 **To see Exploratory Data Analysis click on the link (Jupyter Notebook) below:**<br>
-<a target="_blank" href="notebooks/preliminary-analysis.ipynb">
+<a target="_blank" href="notebooks/eda.ipynb">
     <img src="res/jupyter-icon.ico" />
     Exploratory Data Analysis (EDA)
 </a>
