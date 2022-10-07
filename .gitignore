@@ -252,3 +252,9 @@ $RECYCLE.BIN/
 # Ignore all .csv files
 *.csv
 *.7z
+
+# Ignore catboost info.
+catboost_info
+
+# Ignore venv files.
+environment
