@@ -16,6 +16,7 @@ This project will be developed follow **CRISP-DM** methodology.
  - [Challenge objectives (Business understanding)](#challenge-objectives)
  - [Dataset proposed (Data understanding)](#problem-proposed)
  - [Exploratory Data Analysis (Data understanding)](#eda)
+ - [Tech Stack](#tech-stack)
  - [Credits](#credits)
 
 
@@ -107,6 +108,18 @@ These fields are as follows:
     <img src="res/jupyter-icon.ico" />
     Exploratory Data Analysis (EDA)
 </a>
+
+---
+
+<div id="tech-stack"></div>
+
+## Tech Stack
+
+ - **Python with:**
+   - [Scikit-Learn](https://scikit-learn.org/)
+   - [CatBoost](https://catboost.ai/)
+   - [Pandas](https://pandas.pydata.org/)
+   - [py7zr](https://py7zr.readthedocs.io/en/latest/)
 
 ---
 
