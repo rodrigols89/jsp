@@ -73,7 +73,36 @@ These fields are as follows:
  - **Company:**
    - The employer (empregador) name provided by the job advertiser.
  - **Category:**
-   - Job categories (are 30):
+   - Job categories (are 29):
+     - IT Jobs
+     - Engineering Jobs
+     - Accounting & Finance Jobs
+     - Healthcare & Nursing Jobs
+     - Sales Jobs
+     - Other/General Jobs
+     - Teaching Jobs
+     - Hospitality & Catering Jobs
+     - PR, Advertising & Marketing Jobs
+     - Trade & Construction Jobs
+     - HR & Recruitment Jobs
+     - Admin Jobs
+     - Retail Jobs
+     - Customer Services Jobs
+     - Legal Jobs
+     - Manufacturing Jobs
+     - Logistics & Warehouse Jobs
+     - Social work Jobs
+     - Consultancy Jobs
+     - Travel Jobs
+     - Scientific & QA Jobs
+     - Charity & Voluntary Jobs
+     - Energy, Oil & Gas Jobs
+     - Creative & Design Jobs
+     - Maintenance Jobs
+     - Graduate Jobs
+     - Property Jobs
+     - Domestic help & Cleaning Jobs
+     - Part time Jobs
  - **SalaryRaw:**
    - Imagine that this column represents the salary of the ad (sample). However:
      - No formatting;
