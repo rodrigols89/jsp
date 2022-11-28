@@ -130,6 +130,9 @@ These fields are as follows:
 
 ## Exploratory Data Analysis (Data understanding)
 
+**NOTE:**<br>
+To apply **Exploratory Data Analysis (Data understanding)** you need first download the datasets **"Train_rev1.7z"** and **"Test_rev1.7z"** on [Job Salary Prediction](https://www.kaggle.com/competitions/job-salary-prediction/data) and put on */datasets* folder.
+
 > Here, we go understanding more about the data, applying an **Exploratory Data Analysis (EDA)**.
 
 **To see Exploratory Data Analysis click on the link (Jupyter Notebook) below:**<br>
