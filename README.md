@@ -16,6 +16,7 @@ This project will be developed follow **CRISP-DM** methodology.
  - [Challenge objectives (Business understanding)](#challenge-objectives)
  - [Dataset proposed (Data understanding)](#problem-proposed)
  - [Exploratory Data Analysis (Data understanding)](#eda)
+ - [Modeling & Evaluation](#model-evaluation)
  - [Tech Stack](#tech-stack)
  - [Credits](#credits)
 
@@ -139,6 +140,23 @@ To apply **Exploratory Data Analysis (Data understanding)** you need first downl
 <a target="_blank" href="notebooks/EDA.ipynb">
     <img src="res/jupyter-icon.ico" />
     Exploratory Data Analysis (EDA)
+</a>
+
+---
+
+<div id="model-evaluation"></div>
+
+## Modeling & Evaluation
+
+> Here, we go create **models** to make predicts and **Evaluation** how well our models learned.
+
+**NOTE:**<br>
+To each time I change the model features (apply preprocessing) I'll create a new Jupyter Notebook to you understanding how was the process.
+
+**To see Modeling & Evaluation (v1) click on the link (Jupyter Notebook) below:**<br>
+<a target="_blank" href="notebooks/modeling-evaluation-v1.ipynb">
+    <img src="res/jupyter-icon.ico" />
+    Modeling & Evaluation (v1)
 </a>
 
 ---
