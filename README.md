@@ -20,7 +20,6 @@ This project will be developed follow **CRISP-DM** methodology.
  - [Tech Stack](#tech-stack)
  - [Credits](#credits)
 
-
 ---
 
 <div id="challenge-objectives"></div>
