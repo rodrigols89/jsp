@@ -67,8 +67,6 @@ pyppmd==0.18.3
 pyrsistent==0.18.1
 python-dateutil==2.8.2
 pytz==2022.4
-pywin32==304
-pywinpty==2.0.8
 pyzmq==24.0.1
 pyzstd==0.15.3
 qtconsole==5.3.2
