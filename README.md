@@ -13,12 +13,45 @@ This project will be developed follow **CRISP-DM** methodology.
 
 ## Project Overview
 
+ - [Project Settings](#settings)
  - [Challenge objectives (Business understanding)](#challenge-objectives)
  - [Dataset proposed (Data understanding)](#problem-proposed)
  - [Exploratory Data Analysis (Data understanding)](#eda)
  - [Modeling & Evaluation](#model-evaluation)
  - [Tech Stack](#tech-stack)
  - [Credits](#credits)
+
+---
+
+<div id="settings"></div>
+
+## Project Settings
+
+To work with this project first you, need download the datasets **"Train_rev1.7z"** and **"Test_rev1.7z"** on [Job Salary Prediction](https://www.kaggle.com/competitions/job-salary-prediction/data) and put on **[/datasets](datasets/)** folder.
+
+With the data downloaded now you need to create a virtual environment and download the Python libraries:
+
+**Create virtual environment:**<br>
+```python
+# Venv approach.
+python -m venv environment
+
+# Virtualenv approach.
+virtualenv --python="/usr/local/bin/python3.10" environment
+```
+
+**Activate the environment:**<br>
+```python
+# Linux approach.
+source environment/bin/activate
+```
+
+**Download Python libraries:**<br>
+```python
+pip install --upgrade -r requirements.txt
+```
+
+Now, you ready to use the project 😬.
 
 ---
 
@@ -129,9 +162,6 @@ These fields are as follows:
 <div id="eda"></div>
 
 ## Exploratory Data Analysis (Data understanding)
-
-**NOTE:**<br>
-To apply **Exploratory Data Analysis (Data understanding)** you need first download the datasets **"Train_rev1.7z"** and **"Test_rev1.7z"** on [Job Salary Prediction](https://www.kaggle.com/competitions/job-salary-prediction/data) and put on */datasets* folder.
 
 > Here, we go understanding more about the data, applying an **Exploratory Data Analysis (EDA)**.
 
