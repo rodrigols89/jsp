@@ -48,7 +48,7 @@ source environment/bin/activate
 
 **Download Python libraries:**<br>
 ```python
-pip install --upgrade -r requirements.txt
+python -m pip install -U -v --require-virtualenv .
 ```
 
 Now, you ready to use the project 😬.
