@@ -51,6 +51,15 @@ source environment/bin/activate
 python -m pip install -U -v --require-virtualenv .
 ```
 
+**NOTE:**<br>
+To work on the project and apply the test, please, install **dev** and **test** dependencies:
+
+```
+python -m pip install -U -v --require-virtualenv .[dev] .[test]
+```
+
+To finalize, start [pre-commit settings](.pre-commit-config.yaml):
+
 Now, you ready to use the project 😬.
 
 ---
