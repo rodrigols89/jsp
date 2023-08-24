@@ -1,14 +1,14 @@
 [tool.poetry]
-name = "job-salary-prediction"
+name = "JSP"
 version = "0.1.0"
 description = "Predict the salary of any UK job ad based on its contents."
 authors = ["drigols <drigols.creative@gmail.com>"]
 license = "MIT"
-packages = [{ include = "job_salary_prediction" }]
+packages = [{ include = "jsp" }]
 readme = "README.md"
 classifiers = [
-    "Natural Language :: English",
-    "Programming Language :: Python :: 3.11",
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.11",
 ]
 
 [tool.poetry.dependencies]
@@ -50,11 +50,11 @@ security = "bandit ."
 precommit = "pre-commit run --all-files"
 checkall = "task lint && task security && task precommit"
 pre_test = "task lint && task precommit && task security -r"
-test = "pytest -s -x --cov=dota2learning -vv"
+test = "pytest -s -x --cov=jsp -vv"
 post_test = "coverage html"
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/drigols/job-salary-prediction/issues"
+"Bug Tracker" = "https://github.com/drigols/jsp/issues"
 
 [tool.black]
 line-length = 79
