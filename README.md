@@ -18,11 +18,11 @@
 
 ## Project Settings
 
-To use the project first, install the dependencies:
+To use the project first, prepare the virtual environment and install the dependencies:
 
-**Install dependencies:**
+**Set environment:**
 ```bash
-poetry install
+poetry env use python
 ```
 
 **Activate environment:**
@@ -30,7 +30,11 @@ poetry install
 poetry shell
 ```
 
-**NOTE:**<br>
+**Install dependencies:**
+```bash
+poetry install
+```
+
 I preferred to store the data in PostgreSQL (using the Docker container) because it is easier to apply SQL queries in all applications.
 
 Knowing this, with *docker compose* installed, run:
@@ -39,13 +43,10 @@ Knowing this, with *docker compose* installed, run:
 sudo docker compose up -d
 ```
 
+As the datasets are huge and cannot be downloaded using Kaggle API (are very old datasets) you will need:
 
-
-
-
-
-
-
+ - Download [train (Train_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Train_rev1.zip) and [test (Test_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Test_rev1.zip) manually.
+ - Extract them in the [/kaggle](jsp/data_sources/kaggle) folder in *.CSV format*.
 
 ---
 
