@@ -1,5 +1,6 @@
 version: '3.9'
 services:
+  # PostgresSQL service.
   postgres:
     container_name: postgres-container
     image: postgres:latest
@@ -11,4 +12,4 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./jsp/data_sources:/home/data_sources # local-machine:container-machine
+      - ./jsp/datalake:/home/datalake # local-machine:container-process.
