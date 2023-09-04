@@ -48,6 +48,13 @@ As the datasets are huge and cannot be downloaded using Kaggle API (are very old
  - Download [train (Train_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Train_rev1.zip) and [test (Test_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Test_rev1.zip) manually.
  - Extract them in the [/kaggle](jsp/data_sources/kaggle) folder in *.CSV format*.
 
+**NOTE:**<br>
+If you are interested in committing something initialize [pre-commit](https://pre-commit.com/#3-install-the-git-hook-scripts) settings:
+
+```bash
+pre-commit install
+```
+
 ---
 
 Ro**drigo** **L**eite da **S**ilva - **drigols**
