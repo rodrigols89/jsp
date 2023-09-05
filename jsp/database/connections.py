@@ -9,26 +9,33 @@ from sqlalchemy import Engine, create_engine
 
 
 def get_engine_connection(
-    dialect: str,
-    username: str,
-    password: str,
-    database: str,
-    host: str,
-    port: int,
+    dialect: str = "postgresql",
+    username: str = "postgres",
+    password: str = "postgres",
+    database: str = "jsp-db",
+    host: str = "localhost",
+    port: int = 5432,
 ) -> Engine:
     """
     Create a SQLAlchemy Engine connection.
 
     Args:
-        dialect (str): The database dialect (e.g., "postgresql").
-        username (str): The database username.
-        password (str): The database password.
-        database (str): The name of the database
-        host (str): The database host.
-        port (int): The database port.
+        dialect (str, optional): The database dialect. Defaults to "postgresql".
+        username (str, optional): The database username. Defaults to "postgres".
+        password (str, optional): The database password. Defaults to "postgres".
+        database (str, optional): The name of the database. Defaults to "jsp-db".
+        host (str, optional): The database host. Defaults to "localhost".
+        port (int, optional): The database port. Defaults to 5432.
 
     Returns:
         Engine: A SQLAlchemy Engine object.
+
+    Example:
+        >>> engine = get_engine_connection()
+        >>> print(engine)
+        Engine(postgresql://postgres:***@localhost:5432/jsp-db)
+
+    # noqa
     """
     engine = create_engine(
         f"{dialect}://{username}:{password}@{host}:{port}/{database}",
