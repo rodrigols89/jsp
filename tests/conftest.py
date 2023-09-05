@@ -4,11 +4,11 @@ import pytest
 
 
 @pytest.fixture
-def default_database_arguments():
+def not_default_database_arguments():
     engine_dict = {
         "dialect": "postgresql",
         "username": "myusername",
-        "password": "mypass",
+        "password": "mypassword",
         "database": "mydb",
         "host": "localhost",
         "port": 5432,
