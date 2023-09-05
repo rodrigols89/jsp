@@ -24,7 +24,8 @@ isort = "^5.12.0"
 flake8 = "^6.1.0"
 pre-commit = "^3.3.3"
 pyupgrade = "^3.10.1"
-bandit = "^1.7.5"
+sqlalchemy = "^2.0.20"
+psycopg2-binary = "^2.9.7"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.0"
@@ -44,12 +45,13 @@ profile = "black"
 line_length = 79
 
 [tool.taskipy.tasks]
-add_future = "isort . --add-import 'from __future__ import annotations'"
-lint = "task add_future && black --check --diff . && isort --check --diff . && flake8 ."
-security = "bandit ."
+add-future = "isort . --add-import 'from __future__ import annotations'"
+check-isort = "isort --check --diff ."
+check-black = "black --check --diff ."
+check-flake8 = "flake8 ."
+apply-linters = "task add-future && task check-isort && task check-black && task check-flake8"
 precommit = "pre-commit run --all-files"
-checkall = "task lint && task security && task precommit"
-pre_test = "task lint && task precommit && task security -r"
+pre_test = "task apply-linters && task precommit"
 test = "pytest -s -x --cov=jsp -vv"
 post_test = "coverage html"
 
