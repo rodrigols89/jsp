@@ -11,6 +11,9 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
 ]
 
+[tool.poetry.scripts]
+jsp = "jsp.cli.main:app"
+
 [tool.poetry.dependencies]
 python = "^3.10"
 
