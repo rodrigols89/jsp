@@ -10,6 +10,7 @@ from __future__ import annotations
 import pandas as pd
 
 from jsp.database.connections import get_engine_connection
+from jsp.etl.extract import extract_data_from_csv
 
 
 def load_data_to_postgresql(table_name: str, dataframe: pd.DataFrame) -> None:
@@ -27,3 +28,23 @@ def load_data_to_postgresql(table_name: str, dataframe: pd.DataFrame) -> None:
         dataframe.to_sql(
             table_name, connection, if_exists="replace", index=False
         )
+
+
+def load_train_df_to_postgresql() -> None:
+    """
+    Loads the TRAIN data from a .CSV file into a PostgreSQL database table.
+    """
+    print("Loading train data into PostgreSQL database...")
+    train_df = extract_data_from_csv("jsp/datalake/landing/Train_rev1.csv")
+    load_data_to_postgresql("train-table", train_df)
+    print("Train data loaded successfully.")
+
+
+def load_test_df_to_postgresql() -> None:
+    """
+    Loads the TEST data from a .CSV file into a PostgreSQL database table.
+    """
+    print("Loading test data into PostgreSQL database...")
+    test_df = extract_data_from_csv("jsp/datalake/landing/Test_rev1.csv")
+    load_data_to_postgresql("test-table", test_df)
+    print("Test data loaded successfully.")
