@@ -75,6 +75,35 @@ As the datasets are huge and cannot be downloaded using Kaggle API (are very old
  - Download [train (Train_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Train_rev1.zip) and [test (Test_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Test_rev1.zip) manually.
  - Extract them in the [jsp/datalake/landing](./jsp/datalake/landing) folder in *.CSV format*.
 
+Finally, you can run the command **"jsp etl"** CLI to load the DataFrames into PostgreSQL:
+
+```bash
+jsp etl --help
+```
+
+```bash
+Usage: jsp etl [OPTIONS] COMMAND [ARGS]...
+
+  Command to apply ETL processes.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  load-all    Loads all train and test data into PostgreSQL.
+  load-test   Loads test data into PostgreSQL.
+  load-train  Loads train DataFrames into PostgreSQL.
+```
+
+Here you can use:
+
+ - **jsp etl load-all:**
+   - To load the *train* and *test* data into PostgreSQL.
+ - **jsp etl load-test:**
+   - To load the *test* data into PostgreSQL.
+ - **jsp etl load-train:**
+   - To load the *train* data into PostgreSQL.
+
 **NOTE:**<br>
 If you are interested in committing something initialize [pre-commit](https://pre-commit.com/#3-install-the-git-hook-scripts) settings:
 
