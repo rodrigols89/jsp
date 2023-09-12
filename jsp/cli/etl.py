@@ -19,12 +19,6 @@ app = typer.Typer(help="Command to apply ETL processes.")
 def load_train() -> None:
     """
     Loads train DataFrames into PostgreSQL.
-
-    Args:
-        None
-
-    Returns:
-        None
     """
     load_train_df_to_postgresql()
 
@@ -33,12 +27,6 @@ def load_train() -> None:
 def load_test() -> None:
     """
     Loads test data into PostgreSQL.
-
-    Args:
-        None
-
-    Returns:
-        None
     """
     load_test_df_to_postgresql()
 
