@@ -8,6 +8,7 @@
 ## Project Overview
 
  - [Dataset proposed (Data Understanding)](#problem-proposed)
+ - [Exploratory Data Analysis (Data understanding)](#eda)
  - [Data Lake Architecture](#architecture)
  - [Settings](#settings)
 
@@ -95,7 +96,21 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
   - Fields that are incorrectly normalised;
   - And duplicate adverts.
 
+<!--- ( Exploratory Data Analysis (Data understanding) ) --->
 
+--
+
+<div id="eda"></div>
+
+## Exploratory Data Analysis (Data understanding)
+
+> Here, let's apply an **Exploratory Data Analysis (EDA)** to understand more about the data.
+
+**To see Exploratory Data Analysis click on the link (Jupyter Notebook) below:**<br>
+<a target="_blank" href="jsp/notebooks/eda.ipynb">
+    <img src="assets/jupyter-icon.ico" />
+    Exploratory Data Analysis (EDA)
+</a>
 
 <!--- ( Architecture ) --->
 
