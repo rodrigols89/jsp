@@ -5,10 +5,14 @@
 
 > The Job Salary Prediction project was developed with the aim of predicting job advertisement salaries in the United Kingdom (UK).
 
+**NOTE:**<br>
+This project was developed following the **CRISP-DM** methodology.
+
 ## Project Overview
 
  - [Dataset proposed (Data Understanding)](#problem-proposed)
  - [Exploratory Data Analysis (Data understanding)](#eda)
+ - [Training & Evaluation (Modeling & Evaluation)](#training-evaluation)
  - [Data Lake Architecture](#architecture)
  - [Settings](#settings)
 
@@ -98,7 +102,7 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
 
 <!--- ( Exploratory Data Analysis (Data understanding) ) --->
 
---
+---
 
 <div id="eda"></div>
 
@@ -110,6 +114,22 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
 <a target="_blank" href="jsp/notebooks/eda.ipynb">
     <img src="assets/jupyter-icon.ico" />
     Exploratory Data Analysis (EDA)
+</a>
+
+---
+
+<div id="training-evaluation"></div>
+
+## Training & Evaluation (Modeling & Evaluation)
+
+> Here, let's create **models** to make predictions and **evaluate** how well our models learned.
+
+**NOTE:**<br>
+Each time I change/update the model (apply preprocessing or add new features) I'll create a new Jupyter Notebook.
+
+<a target="_blank" href="notebooks/modeling-evaluation-v1.ipynb">
+    <img src="assets/jupyter-icon.ico" />
+    [v1] - Training & Evaluation (baseline, dummy, PoC, prototype)
 </a>
 
 <!--- ( Architecture ) --->
