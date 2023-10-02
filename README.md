@@ -111,10 +111,12 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
 
 > Here, let's apply an **Exploratory Data Analysis (EDA)** to understand more about the data.
 
-**To see Exploratory Data Analysis click on the link (Jupyter Notebook) below:**<br>
+**NOTE:**<br>
+For each *Exploratory Data Analysis (EDA)* I'll create a new Jupyter Notebook with a different focus.
+
 <a target="_blank" href="jsp/notebooks/eda.ipynb">
     <img src="assets/jupyter-icon.ico" />
-    Exploratory Data Analysis (EDA)
+    [v1] - Exploratory Data Analysis/EDA (Data understanding)
 </a>
 
 ---
@@ -128,7 +130,7 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
 **NOTE:**<br>
 Each time I change/update the model (apply preprocessing or add new features) I'll create a new Jupyter Notebook.
 
-<a target="_blank" href="notebooks/modeling-evaluation-v1.ipynb">
+<a target="_blank" href="jsp/notebooks/training-v1.ipynb">
     <img src="assets/jupyter-icon.ico" />
     [v1] - Training & Evaluation (baseline, dummy, PoC, prototype)
 </a>
