@@ -15,6 +15,7 @@ This project was developed following the **CRISP-DM** methodology.
  - [Training & Evaluation (Modeling & Evaluation)](#training-evaluation)
  - [Data Lake Architecture](#architecture)
  - [Settings](#settings)
+ - [Tech Stack](#tech-stack)
 
 <!--- ( Dataset proposed (Data Understanding) ) --->
 
@@ -232,6 +233,39 @@ If you are interested in committing something initialize [pre-commit](https://pr
 ```bash
 pre-commit install
 ```
+
+---
+
+<div id="tech-stack"></div>
+
+## Tech Stack
+
+ - **Python with:**
+   - **Data Science:**
+     - [Pandas](https://pandas.pydata.org/)
+     - [Scikit-Learn](https://scikit-learn.org/)
+     - [CatBoost](https://catboost.ai/)
+     - [Jupyter Notebook](https://jupyter.org/)
+   - **Database:**
+     - [SQLAlchemy](https://www.sqlalchemy.org/)
+   - **CLI:**
+     - [Typer](https://typer.tiangolo.com/)
+   - **Testing:**
+     - [CodeCov](https://codecov.io/)
+     - [Coverage](https://coverage.readthedocs.io/)
+     - [Pytest](https://docs.pytest.org/)
+     - [pytest-cov](https://github.com/pytest-dev/pytest-cov)
+     - [pytest-mock](https://github.com/pytest-dev/pytest-mock)
+   - **Linters:**
+     - [black](https://github.com/psf/black)
+     - [isort](https://github.com/PyCQA/isort)
+     - [flake8](https://flake8.pycqa.org/en/latest/)
+   - **Hooks:**
+     - [pre-commit](https://pre-commit.com/)
+     - [pyupgrade](https://github.com/asottile/pyupgrade)
+   - **Tools:**
+     - [Poetry](https://python-poetry.org/)
+     - [taskipy](https://github.com/taskipy/taskipy)
 
 ---
 
