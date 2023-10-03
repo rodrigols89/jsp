@@ -1,54 +1,67 @@
-[build-system]
-# Minimum requirements for the build system to execute.
-requires = ["setuptools", "wheel"]  # PEP 508 specifications.
-build-backend = "setuptools.build_meta"
-
-# Ignore flat-layout.
-[tool.setuptools]
-py-modules = []
-
-[project]
-name = "jsp"
-version = "4.0.0"
+[tool.poetry]
+name = "JSP"
+version = "0.1.0"
 description = "Predict the salary of any UK job ad based on its contents."
-license = {file = "LICENSE.md"}
+authors = ["drigols <drigols.creative@gmail.com>"]
+license = "MIT"
+packages = [{ include = "jsp" }]
 readme = "README.md"
-requires-python = ">=3.10.0"
-authors = [
-    { name = "Rodrigo Leite", email = "drigols.creative@gmail.com" },
-]
-maintainers = [
-    { name = "Rodrigo Leite", email = "drigols.creative@gmail.com" },
-]
-keywords = [
-    "eda",
-    "statistics",
-    "machine Learning",
+classifiers = [
+  "Natural Language :: English",
+  "Programming Language :: Python :: 3.11",
 ]
 
-dependencies = [
-    "notebook>=6.5.2",
-    "py7zr>=0.20.2",
-    "pandas>=1.5.2",
-    "scikit-learn>=1.2.0",
-    "numpy>=1.23.5",
-    "catboost>=1.1.1",
-    "ipywidgets>=8.0.3",
-]
+[tool.poetry.scripts]
+jsp = "jsp.cli.main:app"
 
-[project.optional-dependencies]
-# Dev dependencies.
-dev = [
-    "pre-commit>=2.20.0",
-    "black>=22.12.0",
-    "flake8>=6.0.0",
-    "reorder-python-imports>=3.9.0",
-    "pyupgrade>=3.3.1",
-]
-# Test dependencies.
-test = []
-# Doc dependencies.
-doc = []
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+taskipy = "^1.12.0"
+scikit-learn = "^1.3.0"
+catboost = "^1.2"
+pandas = "^2.0.3"
+black = "^23.7.0"
+isort = "^5.12.0"
+flake8 = "^6.1.0"
+pre-commit = "^3.3.3"
+pyupgrade = "^3.10.1"
+sqlalchemy = "^2.0.20"
+psycopg2-binary = "^2.9.7"
+typer = "^0.9.0"
+notebook = "^7.0.3"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.1.0"
+pytest-mock = "^3.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"
+
+[tool.isort]
+profile = "black"
+line_length = 79
+
+[tool.taskipy.tasks]
+add-future = "isort . --add-import 'from __future__ import annotations'"
+check-isort = "isort --check --diff ."
+check-black = "black --check --diff ."
+check-flake8 = "flake8 ."
+apply-linters = "task add-future && task check-isort && task check-black && task check-flake8"
+precommit = "pre-commit run --all-files"
+pre_test = "task apply-linters && task precommit"
+test = "pytest -s -x --cov=jsp -vv"
+post_test = "coverage html"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/drigols/jsp/issues"
 
 [tool.black]
 line-length = 79

@@ -2,105 +2,40 @@
 This project is currently being updated to provide a graphical interface, where it will be possible to use the trained model. To follow this process see the ["develop" branch](https://github.com/drigols/jsp/tree/develop).
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](LICENSE.md)
+[![Code Style Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black/)
 
 # Job Salary Prediction
 
-This project was developed to solve a challenge to **Data Scientist** opportunity from [GRIA](https://www.gria.com.br/).
-
-Briefly, the challenge was:
-
-> Develop a model to predict salaries from job ads.
+> The Job Salary Prediction project was developed with the aim of predicting job advertisement salaries in the United Kingdom (UK).
 
 **NOTE:**<br>
-This project will be developed follow **CRISP-DM** methodology.
+This project was developed following the **CRISP-DM** methodology.
 
 ## Project Overview
 
- - [Project Settings](#settings)
- - [Challenge objectives (Business understanding)](#challenge-objectives)
- - [Dataset proposed (Data understanding)](#problem-proposed)
+ - [Dataset proposed (Data Understanding)](#problem-proposed)
  - [Exploratory Data Analysis (Data understanding)](#eda)
- - [Modeling & Evaluation](#model-evaluation)
+ - [Training & Evaluation (Modeling & Evaluation)](#training-evaluation)
+ - [Data Lake Architecture](#architecture)
+ - [Settings](#settings)
  - [Tech Stack](#tech-stack)
- - [Credits](#credits)
 
----
-
-<div id="settings"></div>
-
-## Project Settings
-
-To work with this project first you, need download the datasets **"Train_rev1.7z"** and **"Test_rev1.7z"** on [Job Salary Prediction](https://www.kaggle.com/competitions/job-salary-prediction/data) and put on **[/datasets](datasets/)** folder.
-
-With the data downloaded now you need to create a virtual environment and download the Python libraries:
-
-**Create virtual environment:**<br>
-```python
-# Venv approach.
-python -m venv environment
-
-# Virtualenv approach.
-virtualenv --python="/usr/local/bin/python3.10" environment
-```
-
-**Activate the environment:**<br>
-```python
-# Linux approach.
-source environment/bin/activate
-```
-
-**Download Python libraries:**<br>
-```python
-python -m pip install -U -v --require-virtualenv .
-```
-
-**NOTE:**<br>
-To work on the project and apply the test, please, install **dev** and **test** dependencies:
-
-```
-python -m pip install -U -v --require-virtualenv .[dev] .[test]
-```
-
-To finalize, start [pre-commit settings](.pre-commit-config.yaml):
-
-Now, you ready to use the project 😬.
-
----
-
-<div id="challenge-objectives"></div>
-
-##  Challenge objectives (Business understanding)
-
-The main [GRIA](https://www.gria.com.br/) objectives were to evaluate how the candidate would work as a **Data Scientist** in the company.
-
- - **The main evaluation criteria were:**
-   - Documentation;
-   - Reproducibility:
-     - The ability to be reproduced or copied.
-   - Code analysis and quality;
-   - Pipeline modeling (Modelagem de pipeline);
-   - Efficiency.
-
-The problem proposed were [Job Salary Prediction](https://www.kaggle.com/competitions/job-salary-prediction/) available on [Kaggle](https://www.kaggle.com/). The objectives and specifications described in the competition will be considered by [GRIA](https://www.gria.com.br/).
-
-**Briefly, the challenge was:**<br>
- - Create a model to predict salaries from job ads.
- - The **Evaluation Metric** to the competition were [Mean Absolute Error](https://en.wikipedia.org/wiki/Mean_absolute_error).
+<!--- ( Dataset proposed (Data Understanding) ) --->
 
 ---
 
 <div id="problem-proposed"></div>
 
-## Dataset proposed (Data understanding)
+## Dataset proposed (Data Understanding)
 
-The dataset consists of a large number of rows (240k+ samples) representing individual job ads, and a series of fields about each job ad.
+The **dataset proposed [(Job Salary Prediction)](https://www.kaggle.com/competitions/job-salary-prediction/)** consists of a large number of rows (240k+ samples) representing individual job ads.
 
-These fields are as follows:
+The dataset features are:
 
  - **Id:**
    - A unique identifier for each job ad
  - **Title:**
-   - Briefly, the **Title** is the summary (resumo) of the position or function.
+   - Briefly, the **Title** is the summary of the position or function.
  - **FullDescription:**
    - The full text of the job ad as provided by the job advertiser.
    - Where you see ***s, we have stripped values from the description in order to ensure that no salary information appears within the descriptions.
@@ -112,11 +47,11 @@ These fields are as follows:
    - That's because this column is the result of a Pre-Processing of the LocationRaw column did by Adzuna.
  - **ContractType:**
    - This column represents the types of contracts per job vacancy sample, which are **full_time** or **part_time**.
-   - In fact, this column tells us whether the employee works **full-time (eg 40 hours per week)** or **part-time (eg 20 hours per week)**.
+   - In fact, this column tells us whether the employee works **full-time (e.g. 40 hours per week)** or **part-time (e.g. 20 hours per week)**.
  - **ContractTime:**
    - Contract type, which can be **permanent** or **contract**.
  - **Company:**
-   - The employer (empregador) name provided by the job advertiser.
+   - The employer name provided by the job advertiser.
  - **Category:**
    - Job categories (are 29):
      - IT Jobs
@@ -161,13 +96,15 @@ These fields are as follows:
  - **SourceName:**
    - The website name or advertiser from whom we received the job ad.
 
-**NOTE:**<br>
-**All of the data is real**, live data used in job ads so is clearly subject to lots of real world noise, including but not limited to:
+**All of the data are real.**<br>
+Used in job ads so are clearly subject to lots of real-world noise, including but not limited to:
 
   - Ads that are not UK based;
   - Salaries that are incorrectly stated;
   - Fields that are incorrectly normalised;
   - And duplicate adverts.
+
+<!--- ( Exploratory Data Analysis (Data understanding) ) --->
 
 ---
 
@@ -175,30 +112,132 @@ These fields are as follows:
 
 ## Exploratory Data Analysis (Data understanding)
 
-> Here, we go understanding more about the data, applying an **Exploratory Data Analysis (EDA)**.
+> Here, let's apply an **Exploratory Data Analysis (EDA)** to understand more about the data.
 
-**To see Exploratory Data Analysis click on the link (Jupyter Notebook) below:**<br>
-<a target="_blank" href="notebooks/EDA.ipynb">
-    <img src="res/jupyter-icon.ico" />
-    Exploratory Data Analysis (EDA)
+**NOTE:**<br>
+For each *Exploratory Data Analysis (EDA)* I'll create a new Jupyter Notebook with a different focus.
+
+<a target="_blank" href="jsp/notebooks/eda.ipynb">
+    <img src="assets/jupyter-icon.ico" />
+    [v1] - Exploratory Data Analysis/EDA (Data understanding)
 </a>
 
 ---
 
-<div id="model-evaluation"></div>
+<div id="training-evaluation"></div>
 
-## Modeling & Evaluation
+## Training & Evaluation (Modeling & Evaluation)
 
-> Here, we go create **models** to make predicts and **Evaluation** how well our models learned.
+> Here, let's create **models** to make predictions and **evaluate** how well our models learned.
 
 **NOTE:**<br>
-To each time I change the model features (apply preprocessing) I'll create a new Jupyter Notebook to you understanding how was the process.
+Each time I change/update the model (apply preprocessing or add new features) I'll create a new Jupyter Notebook.
 
-**To see Modeling & Evaluation (v1) click on the link (Jupyter Notebook) below:**<br>
-<a target="_blank" href="notebooks/modeling-evaluation-v1.ipynb">
-    <img src="res/jupyter-icon.ico" />
-    Modeling & Evaluation (v1)
+<a target="_blank" href="jsp/notebooks/training-v1.ipynb">
+    <img src="assets/jupyter-icon.ico" />
+    [v1] - Training & Evaluation (baseline, dummy, PoC, prototype)
 </a>
+
+<!--- ( Architecture ) --->
+
+---
+
+<div id="architecture"></div>
+
+## Data Lake Architecture
+
+The project follows the following **Data Lake Architecture** to store and make available data:
+
+![img](assets/architecture.png)
+
+ - **Landing (Entry Point/Ingestion):**
+   - The *"Landing"* bucket serves as the *entry point* for the data lake.
+   - It is used to receive **raw data**, often in its original format, with little or no transformation.
+   - Data here can come from various sources such as server logs, IoT devices, social media feeds, etc.
+   - The primary purpose of this bucket is to store **raw data**, allowing data to be quickly dumped into the data lake without an immediate need for processing or structuring. This helps capture all available data for future analysis and transformation.
+ - **Processing:**
+   - The *"Processing"* bucket is where *raw data* from the *"Landing"* layer undergoes processing and transformation to make it more usable and valuable.
+   - Data here may be cleaned, enriched, structured, and transformed into suitable formats for advanced analytics, machine learning, reporting, and other use cases.
+   - Typically, data processing tools like Apache Spark, Apache Flink, or ETL (Extract, Transform, Load) services are used in this layer.
+ - **Curated:**
+   - The *"Curated"* bucket is where processed and ready-to-use data is stored in an organized and structured manner.
+   - Data in this bucket is usually refined, optimized, and may be indexed to enable quick and efficient access.
+   - This layer is often used by Data Analysts, Data Scientists, and other professionals to conduct analyses, create Dashboards, reports, and other activities that require high-quality data.
+   - This is where data becomes "curated" and prepared for consumption by applications and systems that rely on accurate and reliable information.
+
+<!--- ( Settings ) --->
+
+---
+
+<div id="settings"></div>
+
+## Settings
+
+To use the project first, prepare the virtual environment and install the dependencies:
+
+**Set environment:**
+```bash
+poetry env use python
+```
+
+**Activate environment:**
+```bash
+poetry shell
+```
+
+**Install dependencies:**
+```bash
+poetry install
+```
+
+I preferred to store the data in PostgreSQL (using the Docker container) because it is easier to apply SQL queries in all applications.
+
+Knowing this, with *docker compose* installed, run:
+
+```bash
+sudo docker compose up -d
+```
+
+As the datasets are huge and cannot be downloaded using Kaggle API (are very old datasets) you will need:
+
+ - Download [train (Train_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Train_rev1.zip) and [test (Test_rev1.zip)](https://www.kaggle.com/competitions/job-salary-prediction/data?select=Test_rev1.zip) manually.
+ - Extract them in the [jsp/datalake/landing](./jsp/datalake/landing) folder in *.CSV format*.
+
+Finally, you can run the command **"jsp etl"** CLI to load the DataFrames into PostgreSQL:
+
+```bash
+jsp etl --help
+```
+
+```bash
+Usage: jsp etl [OPTIONS] COMMAND [ARGS]...
+
+  Command to apply ETL processes.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  load-all    Loads all train and test data into PostgreSQL.
+  load-test   Loads test data into PostgreSQL.
+  load-train  Loads train DataFrames into PostgreSQL.
+```
+
+Here you can use:
+
+ - **jsp etl load-all:**
+   - To load the *train* and *test* data into PostgreSQL.
+ - **jsp etl load-test:**
+   - To load the *test* data into PostgreSQL.
+ - **jsp etl load-train:**
+   - To load the *train* data into PostgreSQL.
+
+**NOTE:**<br>
+If you are interested in committing something initialize [pre-commit](https://pre-commit.com/#3-install-the-git-hook-scripts) settings:
+
+```bash
+pre-commit install
+```
 
 ---
 
@@ -207,22 +246,31 @@ To each time I change the model features (apply preprocessing) I'll create a new
 ## Tech Stack
 
  - **Python with:**
-   - [Scikit-Learn](https://scikit-learn.org/)
-   - [CatBoost](https://catboost.ai/)
-   - [Pandas](https://pandas.pydata.org/)
-   - [py7zr](https://py7zr.readthedocs.io/en/latest/)
-
----
-
-<div id="credits"></div>
-
-## Credits
-
-**Mentor:**<br>
-[Fernando Felix](https://www.linkedin.com/in/fernandofnjr/)<br>
-
-**Resources:**<br>
-[Job Salary Prediction (Predict the salary of any UK job ad based on its contents)](https://www.kaggle.com/c/job-salary-prediction)<br>
+   - **Data Science:**
+     - [Pandas](https://pandas.pydata.org/)
+     - [Scikit-Learn](https://scikit-learn.org/)
+     - [CatBoost](https://catboost.ai/)
+     - [Jupyter Notebook](https://jupyter.org/)
+   - **Database:**
+     - [SQLAlchemy](https://www.sqlalchemy.org/)
+   - **CLI:**
+     - [Typer](https://typer.tiangolo.com/)
+   - **Testing:**
+     - [CodeCov](https://codecov.io/)
+     - [Coverage](https://coverage.readthedocs.io/)
+     - [Pytest](https://docs.pytest.org/)
+     - [pytest-cov](https://github.com/pytest-dev/pytest-cov)
+     - [pytest-mock](https://github.com/pytest-dev/pytest-mock)
+   - **Linters:**
+     - [black](https://github.com/psf/black)
+     - [isort](https://github.com/PyCQA/isort)
+     - [flake8](https://flake8.pycqa.org/en/latest/)
+   - **Hooks:**
+     - [pre-commit](https://pre-commit.com/)
+     - [pyupgrade](https://github.com/asottile/pyupgrade)
+   - **Tools:**
+     - [Poetry](https://python-poetry.org/)
+     - [taskipy](https://github.com/taskipy/taskipy)
 
 ---
 
