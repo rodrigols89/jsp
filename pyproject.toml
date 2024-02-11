@@ -17,6 +17,7 @@ jsp = "jsp.cli.main:app"
 [tool.poetry.dependencies]
 python = "^3.10"
 streamlit = "^1.31.0"
+pillow = "^10.2.0"
 
 [tool.poetry.group.dev.dependencies]
 taskipy = "^1.12.0"
