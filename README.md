@@ -114,7 +114,6 @@ Used in job ads so are clearly subject to lots of real-world noise, including bu
 
 > Here, let's apply an **Exploratory Data Analysis (EDA)** to understand more about the data.
 
-**NOTE:**<br>
 For each *Exploratory Data Analysis (EDA)* I'll create a new Jupyter Notebook with a different focus.
 
 <a target="_blank" href="jsp/notebooks/eda.ipynb">
@@ -130,7 +129,6 @@ For each *Exploratory Data Analysis (EDA)* I'll create a new Jupyter Notebook wi
 
 > Here, let's create **models** to make predictions and **evaluate** how well our models learned.
 
-**NOTE:**<br>
 Each time I change/update the model (apply preprocessing or add new features) I'll create a new Jupyter Notebook.
 
 <a target="_blank" href="jsp/notebooks/training-v1.ipynb">
@@ -232,7 +230,33 @@ Here you can use:
  - **jsp etl load-train:**
    - To load the *train* data into PostgreSQL.
 
-**NOTE:**<br>
+You can also check the data on the docker container following the instructions below:
+
+**OPEN THE DOCKER CONTAINER:**
+```bash
+sudo docker container exec -it postgres-container bash
+```
+
+**OPEN THE POSTGRES SHELL:**
+```bash
+psql -U postgres
+```
+
+**CHECK DATABASES:**
+```bash
+\l
+```
+
+**CONNECT TO THE DATABASE:**
+```bash
+\c jsp-db
+```
+
+**CHECK TABLES:**
+```bash
+\dt
+```
+
 If you are interested in committing something initialize [pre-commit](https://pre-commit.com/#3-install-the-git-hook-scripts) settings:
 
 ```bash
