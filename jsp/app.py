@@ -50,7 +50,7 @@ def main():
         st.markdown(
             """
             - **Exploratory Data Analysis (Data understanding):**
-              - [[v1] - Exploratory Data Analysis/EDA (Data understanding)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/eda.ipynb)
+              - [[v1] - Exploratory Data Analysis/EDA (Data understanding)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/eda.ipynb) # noqa: E501
             - **Training & Evaluation (Modeling & Evaluation):**
               - [[v1] - Training & Evaluation (baseline, dummy, PoC, prototype)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/training-v1.ipynb)
             - **The current model uses the following features:**
@@ -73,7 +73,6 @@ def main():
             - **The current model has an Evaluation Metric (MAE):**
               - 6.586
             - **Repository:** [Job Salary Prediction](https://github.com/drigols/jsp)
-            # noqa (Ignores the 79-character rule)
         """
         )
 
