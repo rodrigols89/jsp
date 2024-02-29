@@ -1,6 +1,3 @@
-**NOTE:**<br>
-This project is currently being updated to provide a graphical interface, where it will be possible to use the trained model. To follow this process see the ["develop" branch](https://github.com/drigols/jsp/tree/develop).
-
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](LICENSE.md)
 [![Code Style Black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black/)
 
