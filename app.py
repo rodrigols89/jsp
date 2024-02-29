@@ -2,7 +2,11 @@ import pandas as pd
 import streamlit as st
 from catboost import CatBoostRegressor
 
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="Job Salary Prediction",
+    layout="wide",
+    page_icon="assets/img.ico",
+)
 
 
 # Function to make predictions
