@@ -31,7 +31,7 @@ def predict_salary(
 
     # Load the trained model
     model = CatBoostRegressor()
-    model.load_model("datalake/curated/model-v1.cbm")
+    model.load_model("jsp/datalake/curated/model-v1.cbm")
 
     # Make prediction
     prediction = model.predict(df)
