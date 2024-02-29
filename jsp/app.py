@@ -50,7 +50,7 @@ def main():
         st.markdown(
             """
             - **Exploratory Data Analysis (Data understanding):**
-              - [[v1] - Exploratory Data Analysis/EDA (Data understanding)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/eda.ipynb) # noqa: E501
+              - [[v1] - Exploratory Data Analysis/EDA (Data understanding)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/eda.ipynb)
             - **Training & Evaluation (Modeling & Evaluation):**
               - [[v1] - Training & Evaluation (baseline, dummy, PoC, prototype)](https://github.com/drigols/jsp/blob/main/jsp/notebooks/training-v1.ipynb)
             - **The current model uses the following features:**
