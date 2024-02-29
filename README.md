@@ -275,6 +275,8 @@ pre-commit install
      - [Scikit-Learn](https://scikit-learn.org/)
      - [CatBoost](https://catboost.ai/)
      - [Jupyter Notebook](https://jupyter.org/)
+   - **Web Interface:**
+     - [Streamlit](https://streamlit.io/)
    - **Database:**
      - [SQLAlchemy](https://www.sqlalchemy.org/)
    - **CLI:**
