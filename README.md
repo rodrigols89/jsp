@@ -297,4 +297,4 @@ pre-commit install
 
 ---
 
-Ro**drigo** **L**eite da **S**ilva - **drigols**
+**Rodrigo** **L**eite da **S**ilva
